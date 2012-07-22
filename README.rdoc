@@ -3,4 +3,6 @@
 To install, clone this repository in git then from the root directory:
   bundle install
   bundle exec rake db:setup
+  bundle exec rake surveyor FILE=surveys/kitchen_sink_survey.rb
   rails s
+  browse /surveys

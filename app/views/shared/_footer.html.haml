@@ -1,0 +1,63 @@
+.footer
+  .container
+    #footer-navigation
+      .span2
+        .title= link_to 'Information', information_path
+        %ul
+          %li= link_to 'Maps', information_path
+          %li= link_to 'News', information_path
+          %li= link_to 'Campus safety', information_path
+          %li= link_to 'Employment', information_path
+          %li= link_to 'Offices', information_path
+      .span2
+        .title= link_to 'Admission', admission_path
+        %ul
+          %li= link_to 'Undergraduate Courses', admission_path
+          %li= link_to 'Graduate Courses', admission_path
+          %li= link_to 'International Students', admission_path
+          %li= link_to 'Lifelong Learning', admission_path
+          %li= link_to 'Online and Distance Courses', admission_path
+      .span2
+        .title= link_to 'Division', division_path
+        %ul
+          %li= link_to 'Humanities', division_path
+          %li= link_to 'Mathematical, Physical & Life Sciences', division_path
+          %li= link_to 'Medical Sciences', division_path
+          %li= link_to 'Social Sciences', division_path
+          %li= link_to 'Departments A-Z', division_path
+      .span2
+        .title= link_to 'Campus Life', campus_path
+        %ul
+          %li= link_to 'Athletics', campus_path
+          %li= link_to 'ASUSU', campus_path
+          %li= link_to 'Recreation & Wellness', campus_path
+          %li= link_to 'Events Calendar', campus_path
+          %li= link_to 'Arts & Culture', campus_path
+      .span2
+        .title= link_to 'Giving', giving_path
+        %ul
+          %li= link_to 'Give Now', giving_path
+          %li= link_to 'Ways To Give', giving_path
+          %li= link_to 'Capital Campaign', giving_path
+          %li= link_to 'Events Calendar', giving_path
+          %li= link_to 'Alumni Association', giving_path
+      .span2.last
+        .title= link_to 'Research', research_path
+        %ul
+          %li= link_to 'About research', research_path
+          %li= link_to 'Research vision and strategy', research_path
+          %li= link_to 'Research impact', research_path
+          %li= link_to 'Support for researchers', research_path
+          %li= link_to 'Libraries', research_path
+    #footer-line
+      .pull-left
+        = link_to 'Contact', contact_path
+        |
+        = link_to 'Sitemap', sitemap_path
+        |
+        = link_to 'About', about_path
+        |
+        = link_to 'Privacy', privacy_path
+
+      .pull-right
+        Copyright © #{Date.today.year}

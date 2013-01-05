@@ -9,6 +9,26 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require twitter/bootstrap
  *= require_tree .
- *= require bootstrap_and_overrides
  */
+
+
+.content-container {
+    min-height: 500px;
+}
+
+.empty {
+    color: #c0c0c0;
+}
+
+#error_explanation {
+    color: red;
+}
+
+#error_explanation h2 {
+    font-size: 14px;
+    line-height: 30px;
+    margin: 0;
+}
+

@@ -1,0 +1,14 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render "layouts/head"
+    = yield(:head)
+
+  %body
+    = render "shared/nav"
+
+    .container.content-container{ :'data-pjax-container' => true }
+      = render "shared/flash_messages"
+      = yield
+
+    = render 'shared/footer'

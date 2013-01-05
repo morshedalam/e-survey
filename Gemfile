@@ -1,44 +1,45 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 gem 'haml'
+gem 'pjax_rails'
+gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
 gem 'acts_as_list', :git => 'git://github.com/swanandp/acts_as_list.git'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development do
+  gem 'rb-readline'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :development, :test do
+  gem 'annotate'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'webrat'
+  gem 'factory_girl_rails', '1.0.1'
+  gem 'spork', '0.9.0.rc3'
 
-# To use debugger
-# gem 'debugger'
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'pickle', '~> 0.4.4'
+end

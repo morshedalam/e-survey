@@ -16,7 +16,7 @@
 #= require twitter/bootstrap
 
 if $.support.pjax
-  $('.footer a').live 'click', (event) ->
+  $('.pjax-links a').live 'click', (event) ->
     event.preventDefault()
     $.pjax
       container: $(this).data('pjax-container') || '[data-pjax-container]'

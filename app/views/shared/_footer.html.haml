@@ -1,6 +1,6 @@
 .footer
   .container
-    #footer-navigation
+    #footer-navigation.pjax-links
       .span2
         .title= link_to 'Information', information_path
         %ul
@@ -49,7 +49,7 @@
           %li= link_to 'Research impact', research_path
           %li= link_to 'Support for researchers', research_path
           %li= link_to 'Libraries', research_path
-    #footer-line
+    #footer-line.pjax-links
       .pull-left
         = link_to 'Contact', contact_path
         |

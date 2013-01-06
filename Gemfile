@@ -8,10 +8,9 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer'#, :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
-
 
 gem 'haml'
 gem 'pjax_rails'
@@ -21,7 +20,6 @@ gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
 gem 'acts_as_list', :git => 'git://github.com/swanandp/acts_as_list.git'
-
 
 group :development do
   gem 'rb-readline'

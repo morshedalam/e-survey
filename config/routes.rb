@@ -4,5 +4,13 @@ Ter::Application.routes.draw do
     get :admission, :campus, :division, :giving, :information, :research
   end
 
+  #ADMIN PANEL
+  namespace :manage, :as => 'admin' do
+    controller :home do
+      get :index
+    end
+    root :to => 'home#index'
+  end
+
   root :to => 'pages#welcome'
 end

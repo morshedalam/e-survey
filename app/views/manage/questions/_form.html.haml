@@ -1,0 +1,36 @@
+= form_for(@question, :url => submit_path, :method => submit_method, :html => {:class => 'pjax form-horizontal'}) do |f|
+  = render :partial => 'shared/form_error', :locals => {:obj => @question}
+
+  = hidden_field_tag "question[pick]", 'one'
+
+  .control-group
+    = f.label :survey_section_id, 'Section', :class => 'control-label'
+    .controls
+      - if @survey.sections.any?
+        .input
+          = f.select :survey_section_id, @survey.sections.collect{|s| [s.title, s.id]},
+          {:include_blank => true}, :class => 'build-q-attributes'
+      - else
+        .input#new_section
+          = f.text_field :survey_section_title, :placeholder => "Enter new section title",
+          :class => 'show-attributes', :rel => 'section-dependent'
+          = hidden_field_tag "question[survey_section_id]", ''
+
+  .control-group
+    = f.label :text, 'Label', :class => 'control-label'
+    .controls
+      = f.text_field :text, :placeholder => 'Enter Label', :class => 'text_field'
+
+  .control-group
+    = f.label :is_mandatory, 'Mandatory', :class => 'control-label'
+    .controls
+      = f.check_box :is_mandatory, {}, "1"
+
+  .control-group
+    = f.label :display_type, 'Display Type', :class => 'control-label'
+    .controls
+      = display_type_buttons(f)
+
+  .form-actions
+    = f.submit 'Save', :class => 'btn btn-primary'
+    = link_to 'Cancel', manage_questions_path, :class => 'btn pjax'

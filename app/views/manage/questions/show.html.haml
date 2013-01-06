@@ -1,0 +1,18 @@
+.page-header
+  %h1 Question Details
+
+%dl.dl-horizontal
+  %dt
+    %strong Label:
+  %dd= @question.text
+
+  %dt
+    %strong Section:
+  %dd= @question.survey_section.title
+
+
+.form-actions
+  = link_to 'Back', manage_questions_path, :class => 'btn'
+  = link_to 'Edit', edit_manage_question_path(@question), :class => 'btn'
+  = link_to 'Delete', manage_question_path(@question), :method => 'delete',
+  :class => 'btn btn-danger', :data => { :confirm => 'Are you sure, you want to delete the question?' }

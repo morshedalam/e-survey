@@ -13,7 +13,6 @@
  *= require_tree .
  */
 
-
 .content-container {
     min-height: 400px;
 }
@@ -30,5 +29,25 @@
     font-size: 14px;
     line-height: 30px;
     margin: 0;
+}
+
+.date {
+    width: 80px;
+}
+
+.datetime {
+    width: 120px;
+}
+
+input[type="text"] {
+    width: 350px;
+}
+
+textarea {
+    height: 150px;
+    width: 500px;
+}
+.actions{
+    width: 150px;
 }
 

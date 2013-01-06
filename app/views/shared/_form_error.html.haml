@@ -1,0 +1,5 @@
+- if obj.errors.any?
+  .alert.alert-block.alert-error
+    %a.close{:"data-dismiss" => "alert"} &times;
+    - obj.errors.full_messages.each do |message|
+      %p= message

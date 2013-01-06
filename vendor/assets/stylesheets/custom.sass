@@ -1,5 +1,173 @@
 /* Add custom styles here. They will be
  * loaded after the surveyor stylesheets */
+$background_color:#FFFFFF
+
+body
+  :background-color $background_color
+  :font-size 13px
+  :padding-top 60px
+  :font-family "Helvetica Neue", Helvetica, Arial, sans-serif
 
 #surveyor
- :font-family "Century Gothic"
+  :background-color $background_color
+  :width auto
+  :padding 0px
+  :margin 0px 0px 0px 0px
+
+  input[type="submit"], select
+    :-moz-border-bottom-colors none
+    :-moz-border-image none
+    :-moz-border-left-colors none
+    :-moz-border-right-colors none
+    :-moz-border-top-colors none
+    :border-color #CCCCCC #CCCCCC #B3B3B3
+    :border-radius 4px 4px 4px 4px
+    :border-style solid
+    :border-width 1px
+    :box-shadow 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)
+
+  input[type="submit"]
+    :background-color #F5F5F5
+    :background-image -moz-linear-gradient(center top , #FFFFFF, #E6E6E6)
+    :background-repeat repeat-x
+    :color #333333
+    :cursor pointer
+    :display inline-block
+    :font-size 13px
+    :line-height 18px
+    :margin-bottom 0
+    :padding 4px 10px
+    :text-align center
+    :vertical-align middle
+
+  textarea
+    :height 100px
+
+  select
+    :width auto
+    :max-width 350px
+
+  fieldset ol li input[type="radio"]
+    :display inline
+    :width auto
+    :float left
+
+  .survey_title
+    :font-size 30px
+    :line-height 36px
+
+  .surveyor_menu
+    :font-size 20px
+    :background-color $background_color
+    :padding 15px
+
+    ul
+      :margin-top 10px
+      :border 0px
+      :background-color #ffffff
+
+      li
+        :background-color #ffffff
+        :border 0px
+        :margin-bottom 3px
+
+      li.active
+        :background-color #ffffff
+        :border-bottom-width 0px
+
+        input[type="submit"]
+          :background-color #EEEEEE
+
+  .survey_section
+    fieldset>ol
+      :margin 0px
+      :padding 0px
+
+  .previous_section
+    :margin-left 0px
+
+  .next_section
+    :clear both
+    :width 100%
+    :background-color #EEEEEE
+    :border-top 1px solid #DDDDDD
+    :margin-bottom 18px
+    :margin-top 18px
+    :padding 17px 0px 18px
+
+    input[type="submit"]
+      :background-color #0074CC
+      :background-image -moz-linear-gradient(center top , #0088CC, #0055CC)
+      :border-color rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+      :color #ffffff
+      :margin-left 20px
+
+  blockquote:before, blockquote:after, q:before, q:after
+    :content ""
+
+  blockquote, q
+    :quotes "" ""
+
+  .surveyor_radio
+    label
+      :display inline-block
+
+  .surveyor_check_boxes
+    :display inline-block
+
+    label
+      :display inline-block
+
+    input[type="text"]
+      :width 150px
+
+  fieldset
+    :margin 10px 0 0 0
+    :padding 0
+
+    input
+      :margin 0 3px 0 0
+
+    legend
+      :margin-bottom 5px
+      :font-size 13px
+      :line-height 18px
+      :border 0px none
+
+    ol
+      li
+        input, label
+          :display inline
+          :vertical-align middle
+
+  fieldset.g_repeater
+    :margin-top 15px
+
+    ol
+      li
+        fieldset
+          :display block
+
+    input[type="submit"].add_row
+      :clear both
+
+  fieldset.q_label
+    :margin 10px 0 5px 0
+
+  fieldset.q_default
+    :margin-top 15px
+
+  fieldset.q_repeater_default
+    :padding-bottom 15px
+
+  fieldset.q_dependent, fieldset.g_dependent
+    :background-color $background_color
+
+    legend
+      :background-color $background_color
+
+  .horizontal_answer
+    li
+      :float left
+      .choice
+        :padding-right 5px

@@ -5,10 +5,11 @@ Ter::Application.routes.draw do
   end
 
   #ADMIN PANEL
-  namespace :manage, :as => 'admin' do
+  namespace :manage do
     controller :home do
       get :index
     end
+    resources :questions
     root :to => 'home#index'
   end
 

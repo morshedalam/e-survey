@@ -16,11 +16,21 @@
 #= require twitter/bootstrap
 
 if $.support.pjax
-  $('.pjax-links a').live 'click', (event) ->
+  $('.pjax-links a, a.pjax').live 'click', (event) ->
     event.preventDefault()
     $.pjax
       container: $(this).data('pjax-container') || '[data-pjax-container]'
       url: $(this).data('href') || $(this).attr('href')
+      sessionStorage.clear()
+
+  $('form.pjax').live 'submit', (event) ->
+    event.preventDefault()
+    $.pjax
+      container: $(this).data('pjax-container') || '[data-pjax-container]'
+      url: this.action
+      data: $(this).serialize()
+      type: $(this).attr('method')
+      sessionStorage.clear()
 
 else
   $('[data-href]').live 'click', (event) -> # not a native #href, need some help

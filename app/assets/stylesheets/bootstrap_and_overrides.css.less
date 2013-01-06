@@ -1,9 +1,4 @@
 @import "twitter/bootstrap/bootstrap";
-
-body {
-  padding-top: 60px;
-}
-
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -17,6 +12,7 @@ body {
 @fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
 @fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
 @fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+@fontAwesomeEotPath_iefix: '';
 
 // Font Awesome
 @import "fontawesome";
@@ -28,13 +24,13 @@ body {
 //
 // If you'd like to override bootstrap's own variables, you can do so here as well
 // See http://twitter.github.com/bootstrap/less.html for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
 
 .page-header {
   margin: 0 0 10px 0;
   padding-bottom: 0px;
+  h1{
+    font-size: 20px;
+  }
 }
 
 body {
@@ -48,6 +44,7 @@ a, a:visited, a:active {
 
 .navbar-inner {
   background-color: #283344;
+  background-image: none;
   a {
     color: #fff;
   }
@@ -105,4 +102,14 @@ a, a:visited, a:active {
 
   }
 }
-
+.controls{
+  input[type="radio"]{
+    display: inline;
+    margin: 0px;
+  }
+  label{
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}

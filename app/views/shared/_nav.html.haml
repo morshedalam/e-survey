@@ -1,9 +1,17 @@
-.navbar.navbar-inverse.navbar-fixed-top
+.navbar.navbar-fixed-top
   .navbar-inner
     .container
       = link_to "Teaching Efficiency Rating System", root_path, {:class => 'brand'}
 
       .container.nav-collapse
         %ul.nav.pull-right
-          %li= link_to 'Take a Survey'
-          %li= link_to 'Admin', admin_root_url
+          %li= link_to 'Rate Your Teacher'
+          %li.dropdown.pjax-links
+            %a.dropdown-toggle{:href => "javascript:void(0);", "data-toggle" => "dropdown"}
+              Admin
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to 'Home', manage_root_url
+              %li= link_to 'Questions', manage_questions_path
+              %li= link_to 'Teachers', manage_root_url
+              %li= link_to 'Surveys', manage_root_url

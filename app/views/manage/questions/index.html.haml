@@ -15,7 +15,7 @@
     %tbody
       - @questions.each do |question|
         %tr
-          %td= link_to question.text, manage_question_path(question)
+          %td= link_to question.text, manage_question_path(question), :class => 'pjax'
           %td= question.survey_section.title
           %td= question.answers.size
           %td= show_date(question.updated_at)

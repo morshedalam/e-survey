@@ -45,7 +45,7 @@ class Manage::QuestionsController < ApplicationController
     end
   end
 
-  def load_index
+  def load_index()
     @questions = Question.all
     render :index
   end

@@ -16,7 +16,7 @@
     - @question.answers.each do |answer|
       .field= answer.text
 
-.form-actions
+.form-actions.pjax-links
   = link_to 'Back', manage_questions_path, :class => 'btn'
   = link_to 'Edit', edit_manage_question_path(@question), :class => 'btn'
   = link_to 'Delete', manage_question_path(@question), :method => 'delete',

@@ -1,0 +1,5 @@
+.page-header
+  %h1 New Student
+
+= render :partial => 'manage/students/form',
+:locals => {:submit_path => manage_students_path(), :submit_method => :post}

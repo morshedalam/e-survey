@@ -1,0 +1,2 @@
+module Manage::StudentsHelper
+end

@@ -1,0 +1,5 @@
+.page-header
+  %h1 Edit Teacher
+
+= render :partial => 'form',
+:locals => {:submit_path => manage_teacher_path(@teacher), :submit_method => :put}

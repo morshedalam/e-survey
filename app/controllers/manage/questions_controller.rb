@@ -10,7 +10,9 @@ class Manage::QuestionsController < ApplicationController
 
   def new
     @question = Question.new()
-    #@question = Question.find(params[:id]).dup if params[:id].present?
+    2.times do
+      @question.answers.build
+    end
   end
 
   def edit

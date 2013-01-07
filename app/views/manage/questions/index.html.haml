@@ -9,6 +9,7 @@
       %tr
         %th Label
         %th Section
+        %th #Answers
         %th.date Date
         %th.actions
     %tbody
@@ -16,6 +17,7 @@
         %tr
           %td= link_to question.text, manage_question_path(question)
           %td= question.survey_section.title
+          %td= question.answers.size
           %td= show_date(question.updated_at)
           %td.pjax-links
             = link_to 'Edit', edit_manage_question_path(question), :class => 'btn btn-mini'

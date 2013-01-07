@@ -3,13 +3,18 @@
 
 %dl.dl-horizontal
   %dt
-    %strong Label:
+    %strong Label :
   %dd= @question.text
 
   %dt
-    %strong Section:
+    %strong Section :
   %dd= @question.survey_section.title
 
+  %dt
+    %strong Answers :
+  %dd
+    - @question.answers.each do |answer|
+      .field= answer.text
 
 .form-actions
   = link_to 'Back', manage_questions_path, :class => 'btn'

@@ -1,10 +1,10 @@
 class Question < ActiveRecord::Base
   include Surveyor::Models::QuestionMethods
 
-  attr_accessor :survey_section_title, :answer_attributes
-  attr_accessible :survey_section_title
-
+  attr_accessor :survey_section_title
   accepts_nested_attributes_for :answers, :allow_destroy => true
+  attr_accessible :survey_section_title, :answers_attributes
+
   acts_as_list :order => :display_order, :column => :display_order
 
   before_validation :prepare_attributes
@@ -64,12 +64,12 @@ class Question < ActiveRecord::Base
 
   def validate_section_and_answers()
     self.errors.add(:survey_section_id, "can't be blank") if self.survey_section.blank?
-    #if self.answers.size < 2
-    #  self.errors.add(:answers, "You must create at least two answer(s)")
-    #elsif self.pick == 'one'
-    #  items = self.answers.select { |ans| ans.text.blank? || ans.text == ans.response_class }
-    #  self.errors.add(:answers, "Please enter answers label") if items.size > 0
-    #end
+    if self.answers.size < 2
+      self.errors.add(:answers, "You must create at least two answers")
+    elsif self.pick == 'one'
+      items = self.answers.select { |ans| ans.text.blank? || ans.text == ans.response_class }
+      self.errors.add(:answers, "Please enter answers label") if items.size > 0
+    end
   end
 end
 

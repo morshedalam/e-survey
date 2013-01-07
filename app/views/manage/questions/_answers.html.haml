@@ -1,0 +1,5 @@
+%div
+  = form.fields_for :answers do |f|
+    = render "answer_fields", :f => f
+
+  = link_to_add_fields "Add New", form, :answers

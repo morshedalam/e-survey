@@ -27,6 +27,12 @@
     .controls
       = display_type_buttons(f)
 
+  .control-group
+    = f.label :answers, 'Answers', :class => 'control-label'
+    .controls
+      = render :partial => 'answers', :locals => {:form => f}
+
+
   .form-actions
     = f.submit 'Save', :class => 'btn btn-primary'
     = link_to 'Cancel', manage_questions_path, :class => 'btn pjax'

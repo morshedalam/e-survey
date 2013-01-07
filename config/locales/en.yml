@@ -7,3 +7,4 @@ en:
       question:
         text: "Label"
         survey_section_id: "Section"
+        answers: ""

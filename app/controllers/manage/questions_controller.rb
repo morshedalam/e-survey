@@ -1,8 +1,11 @@
 class Manage::QuestionsController < ApplicationController
-  before_filter :load_resources
 
   def index
     load_index()
+  end
+
+  def show
+    @question = Question.find(params[:id])
   end
 
   def new
@@ -31,7 +34,6 @@ class Manage::QuestionsController < ApplicationController
     redirect_to manage_questions_path
   end
 
-
   private
   def render_after_save(action_on_error)
     if @question.save
@@ -44,10 +46,6 @@ class Manage::QuestionsController < ApplicationController
   def load_index
     @questions = Question.all
     render :index
-  end
-
-  def load_resources
-    @survey = Survey.where(:title => 'Efficiency Rating').first_or_create!
   end
 
 end

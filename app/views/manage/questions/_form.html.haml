@@ -1,4 +1,4 @@
-= form_for(@question, :url => submit_path, :method => submit_method, :html => {:class => 'pjax form-horizontal'}) do |f|
+= form_for(@question, :url => submit_path, :html => {:method => submit_method, :class => 'pjax form-horizontal'}) do |f|
   = render :partial => 'shared/form_error', :locals => {:obj => @question}
 
   = hidden_field_tag "question[pick]", 'one'
@@ -6,15 +6,11 @@
   .control-group
     = f.label :survey_section_id, 'Section', :class => 'control-label'
     .controls
-      - if @survey.sections.any?
-        .input
-          = f.select :survey_section_id, @survey.sections.collect{|s| [s.title, s.id]},
-          {:include_blank => true}, :class => 'build-q-attributes'
-      - else
-        .input#new_section
-          = f.text_field :survey_section_title, :placeholder => "Enter new section title",
-          :class => 'show-attributes', :rel => 'section-dependent'
-          = hidden_field_tag "question[survey_section_id]", ''
+      - if SurveySection.any?
+        = f.select :survey_section_id, SurveySection.all.collect{|s| [s.title, s.id]}, {:include_blank => true}
+
+      #new_section{:style => "display:#{@question.survey_section_id.present? ? 'none' : 'block'};"}
+        = f.text_field :survey_section_title, :placeholder => "Enter new section title"
 
   .control-group
     = f.label :text, 'Label', :class => 'control-label'
@@ -24,7 +20,7 @@
   .control-group
     = f.label :is_mandatory, 'Mandatory', :class => 'control-label'
     .controls
-      = f.check_box :is_mandatory, {}, "1"
+      = f.check_box :is_mandatory, {:style => 'margin-top: 10px;'}, "1"
 
   .control-group
     = f.label :display_type, 'Display Type', :class => 'control-label'

@@ -8,14 +8,12 @@
     %thead
       %tr
         %th Name
-        %th Department
         %th.date Admission Date
         %th.actions
     %tbody
       - @students.each do |student|
         %tr
           %td= link_to student.name, manage_student_path(student), :class => 'pjax'
-          %td= student.department_name
           %td= show_date(student.admitted_at)
           %td.pjax-links
             = link_to 'Edit', edit_manage_student_path(student), :class => 'btn btn-mini'

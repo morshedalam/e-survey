@@ -5,7 +5,7 @@
 
       .container.nav-collapse
         %ul.nav.pull-right
-          %li= link_to 'Rate Your Teacher'
+          %li= link_to 'Rate Your Teacher', available_surveys_path()
           %li.dropdown.pjax-links
             %a.dropdown-toggle{:href => "javascript:void(0);", "data-toggle" => "dropdown"}
               Admin
@@ -15,3 +15,4 @@
               %li= link_to 'Questions', manage_questions_path
               %li= link_to 'Teachers', manage_teachers_path
               %li= link_to 'Students', manage_students_path
+              %li= link_to 'Survey Report', manage_students_path

@@ -1,0 +1,16 @@
+#surveyor
+  .hero-unit
+    %h1 Rate Teacher
+    %p
+      Please make sure to add
+      = link_to 'Question', manage_questions_path()
+      ,
+      = link_to 'Teacher', manage_teachers_path()
+      and
+      = link_to 'Student', manage_students_path()
+      to take a survey...
+
+:javascript
+  $(document).ready(function() {
+    $("input#surveyor_javascript_enabled").val(true);
+  });

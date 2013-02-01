@@ -1,5 +1,5 @@
 class Teacher < ActiveRecord::Base
-  attr_accessible :department_name, :first_name, :joining_date, :last_name
+  has_many :response_sets, :dependent => :destroy
 
   validates :first_name, :presence => true
 

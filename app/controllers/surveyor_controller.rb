@@ -1,39 +1,62 @@
-module SurveyorControllerCustomMethods
+module CustomSurveyMethods
   def self.included(base)
-    # base.send :before_filter, :require_user   # AuthLogic
-    # base.send :before_filter, :login_required  # Restful Authentication
-    # base.send :layout, 'surveyor_custom'
+    base.send :before_filter, :determine_if_javascript_is_enabled, :only => [:update]
+    base.send :before_filter, :set_response_set_and_render_context, :only => [:edit, :show]
+    base.send :layout, 'surveyor_custom'
   end
 
   # Actions
   def new
-    super
-    # @title = "You can take these surveys"
+    #Survey and Question
+    @survey = Survey.random
+    redirect_to(new_manage_question_path(),
+                :notice => "You haven't any question to rate.") and return if !(@survey.present? && @survey.has_questions?)
+
+    #Teacher
+    @teacher = Teacher.random
+    redirect_to(new_manage_teacher_path(),
+                :notice => "Please add a teacher to rate") and return if @teacher.nil?
+
+    #Student
+    @student = Student.random
+    redirect_to(new_manage_student_path(),
+                :notice => "Please add a student to take survey") and return if @student.nil?
+
+    #Creating new response set for survey
+    @response_set = ResponseSet.create(:survey => @survey, :user_id => @student.id)
+
+    #Redirect to survey page
+    redirect_to(edit_my_survey_path(:survey_code => @survey.access_code,
+                                    :response_set_code => @response_set.access_code))
   end
-  def create
-    super
-  end
+
   def show
     super
   end
+
   def edit
     super
   end
+
   def update
     super
   end
-  
-  # Paths
-  def surveyor_index
-    # most of the above actions redirect to this method
-    super # available_surveys_path
+
+  def create
+    redirect_to available_surveys_path
   end
+
+  def export
+    redirect_to available_surveys_path
+  end
+
+  private
+
   def surveyor_finish
-    # the update action redirects to this method if given params[:finish]
-    super # available_surveys_path
+    thank_you_path()
   end
 end
 class SurveyorController < ApplicationController
   include Surveyor::SurveyorControllerMethods
-  include SurveyorControllerCustomMethods
+  include CustomSurveyMethods
 end

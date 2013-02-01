@@ -5,6 +5,8 @@ Ter::Application.routes.draw do
     get :admission, :campus, :division, :giving, :information, :research
   end
 
+  match 'thank_you', :to => 'surveyor#thank_you', :as => 'thank_you', :via => :get
+
   #ADMIN PANEL
   namespace :manage do
     controller :home do

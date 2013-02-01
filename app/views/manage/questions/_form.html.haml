@@ -18,11 +18,6 @@
       = f.text_field :text, :placeholder => 'Enter Label', :class => 'text_field'
 
   .control-group
-    = f.label :is_mandatory, 'Mandatory', :class => 'control-label'
-    .controls
-      = f.check_box :is_mandatory, {:style => 'margin-top: 10px;'}, "1"
-
-  .control-group
     = f.label :display_type, 'Display Type', :class => 'control-label'
     .controls
       = display_type_buttons(f)

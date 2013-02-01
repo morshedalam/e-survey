@@ -8,14 +8,12 @@
     %thead
       %tr
         %th Name
-        %th Department
         %th.date Joined At
         %th.actions
     %tbody
       - @teachers.each do |teacher|
         %tr
           %td= link_to teacher.name, manage_teacher_path(teacher) , :class => 'pjax'
-          %td= teacher.department_name
           %td= show_date(teacher.joined_at)
           %td.pjax-links
             = link_to 'Edit', edit_manage_teacher_path(teacher), :class => 'btn btn-mini'

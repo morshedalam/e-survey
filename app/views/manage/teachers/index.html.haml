@@ -7,18 +7,20 @@
   %table.table.table-striped
     %thead
       %tr
-        %th Name
+        %th First Name
+        %th Last Name
         %th.date Joined At
-        %th.actions
+        %th
     %tbody
       - @teachers.each do |teacher|
         %tr
-          %td= link_to teacher.name, manage_teacher_path(teacher) , :class => 'pjax'
+          %td= link_to teacher.first_name, manage_teacher_path(teacher) , :class => 'pjax'
+          %td= link_to teacher.last_name, manage_teacher_path(teacher) , :class => 'pjax'
           %td= show_date(teacher.joined_at)
-          %td.pjax-links
+          %td.actions.pjax-links
             = link_to 'Edit', edit_manage_teacher_path(teacher), :class => 'btn btn-mini'
             = link_to 'Delete', manage_teacher_path(teacher),  :method => :delete,
             :class => 'btn btn-mini btn-danger', :data => { :confirm => 'Are you sure, you want to delete the teacher?' }
 
 - else
-  .empty No question found.
+  .empty No Teacher Information Found.

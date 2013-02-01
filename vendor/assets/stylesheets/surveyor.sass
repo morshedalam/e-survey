@@ -51,11 +51,12 @@ body
   .next_section
     :float right  
   .survey_section
+    :margin-bottom 10px
     span.title
       :display block
-      :padding 5px 0
+      :padding 5px 0 0
       :font-weight bold
-      :font-size 1.5em
+      :font-size 1em
 
   // question groups
   fieldset.g_inline fieldset
@@ -82,10 +83,12 @@ body
     ol
       fieldset
         :vertical-align top
+
       li
+        :padding 0
+
         label, input
           :vertical-align top
-        :padding 1px 0
         p.inline-hints
           :margin 0
           :padding 0

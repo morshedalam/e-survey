@@ -50,7 +50,8 @@ textarea {
     width: 500px;
 }
 .actions{
-    width: 150px;
+    white-space: nowrap;
+    width: 50px;
 }
 .controls .fields{
     padding-bottom: 1px;;

@@ -5,6 +5,10 @@ module CustomSurveyMethods
     base.send :layout, 'surveyor_custom'
   end
 
+  def index
+    @response_sets = ResponseSet.all
+  end
+
   # Actions
   def new
     #Survey and Question
@@ -23,7 +27,7 @@ module CustomSurveyMethods
                 :notice => "Please add a student to take survey") and return if @student.nil?
 
     #Creating new response set for survey
-    @response_set = ResponseSet.create(:survey => @survey, :user_id => @student.id)
+    @response_set = ResponseSet.create(:survey => @survey, :teacher => @teacher, :user => @student)
 
     #Redirect to survey page
     redirect_to(edit_my_survey_path(:survey_code => @survey.access_code,
@@ -40,14 +44,6 @@ module CustomSurveyMethods
 
   def update
     super
-  end
-
-  def create
-    redirect_to available_surveys_path
-  end
-
-  def export
-    redirect_to available_surveys_path
   end
 
   private

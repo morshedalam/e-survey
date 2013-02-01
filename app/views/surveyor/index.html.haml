@@ -1,0 +1,26 @@
+.page-header
+  %h1 Surveys
+
+- if @response_sets.any?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Teacher
+        %th Student
+        %th.date Started At
+        %th.date Completed At
+        %th.actions
+
+    %tbody
+      - @response_sets.each do |rs|
+        - details = view_my_survey_path(:survey_code => rs.survey.access_code, :response_set_code => rs.access_code)
+        %tr
+          %td= link_to(rs.teacher.name, manage_teacher_path(rs.teacher))
+          %td= link_to(rs.user.name, manage_student_path(rs.user))
+          %td= show_date(rs.started_at)
+          %td= show_date(rs.updated_at)
+          %td.actions.pjax-links
+            = link_to('Show', details, :class => 'btn btn-mini pjax')
+
+- else
+  .empty No survey found.

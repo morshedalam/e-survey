@@ -32,10 +32,12 @@
 }
 
 .date {
+    white-space: nowrap;
     width: 80px;
 }
 
 .datetime {
+    white-space: nowrap;
     width: 120px;
 }
 
@@ -49,5 +51,11 @@ textarea {
 }
 .actions{
     width: 150px;
+}
+.controls .fields{
+    padding-bottom: 1px;;
+}
+.fields .field_with_errors{
+    display: inline;
 }
 

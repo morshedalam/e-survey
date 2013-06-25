@@ -23,7 +23,7 @@ gem 'faker', '1.0.1'
 
 group :development do
   gem 'rb-readline'
-  gem 'rename', :path => '/home/morshed/projects/code-bench/rename'
+  gem 'rename'
 end
 
 group :development, :test do

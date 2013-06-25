@@ -12,40 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.pjax
-//= require twitter/bootstrap
-
-if ($.support.pjax) {
-    $('.pjax-links a, a.pjax').live('click', function (event) {
-        event.preventDefault();
-        return $.pjax({
-            container:$(this).data('pjax-container') || '[data-pjax-container]',
-            url:$(this).data('href') || $(this).attr('href')
-        }, sessionStorage.clear());
-    });
-    $('form.pjax').live('submit', function (event) {
-        event.preventDefault();
-        return $.pjax({
-            container:$(this).data('pjax-container') || '[data-pjax-container]',
-            url:this.action,
-            data:$(this).serialize(),
-            type:$(this).attr('method')
-        }, sessionStorage.clear());
-    });
-} else {
-    $('[data-href]').live('click', function (event) {
-        event.preventDefault();
-        return window.location = $(this).data('href');
-    });
-}
-
-$(document).on('pjax:timeout', function () {
-    return false;
-});
-
-$(document).on('pjax:timeout', function () {
-    return false;
-});
+//= require bootstrap
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");

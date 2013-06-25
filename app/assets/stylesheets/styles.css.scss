@@ -1,30 +1,14 @@
-@import "twitter/bootstrap/bootstrap";
-@import "twitter/bootstrap/responsive";
+// Import all the variables into the main css file.
+//@import "variables";
 
-// Set the correct sprite paths
-@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
-@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+// I gather this file is a starting point for the project.
+@import "bootstrap";
+// Include responsive Bootstrap styles
+@import "bootstrap-responsive";
 
-// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
-//       have the proper paths. So for now we use the absolute path.
-@fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
-@fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
-@fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
-@fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
-@fontAwesomeEotPath_iefix: '';
-
-// Font Awesome
-@import "fontawesome";
-
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/less.html for their names and documentation
-
+body {
+  padding-top: 60px;
+}
 .page-header {
   margin: 0 0 10px 0;
   padding-bottom: 0px;
@@ -116,6 +100,6 @@ a, a:visited, a:active {
 .btn-icon{
   cursor: pointer;
 }
-  .btn-icon:hover{
-    text-decoration: none;
-  }
+.btn-icon:hover{
+  text-decoration: none;
+}

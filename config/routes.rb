@@ -14,8 +14,11 @@ SurveyExample::Application.routes.draw do
   end
 
   controller :pages do
-    get :welcome, :contact, :privacy, :sitemap, :about
-    get :admission, :campus, :division, :giving, :information, :research
+    get :welcome
+    get :contact
+    get :privacy
+    get :terms
+    get :about
   end
 
   match 'survey_list', :to => 'surveyor#index', :as => 'survey_list', :via => :get

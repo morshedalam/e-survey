@@ -16,9 +16,13 @@ class Survey < ActiveRecord::Base
   private
 
   def create_section
-    SurveySection.where(:title => self.title,
-                        :survey_id => self.id,
-                        :display_order => 1).first_or_create
+    survey_section = self.sections.first
+
+    if survey_section.present?
+      survey_section.update_attribute(:title, self.title)
+    else
+      SurveySection.create(:title => self.title, :survey_id => self.id, :display_order => 1)
+    end
   end
 end
 

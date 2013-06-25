@@ -5,7 +5,7 @@ SurveyExample::Application.routes.draw do
       get :index
     end
 
-    resources :surveys
+    resources :surveys, :questions
     resources :users
 
     root :to => 'home#index'

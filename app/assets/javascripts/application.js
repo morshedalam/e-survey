@@ -24,3 +24,15 @@ function add_fields(link, association, content) {
     var regexp = new RegExp("new_" + association, "g")
     $(link).parent().before(content.replace(regexp, new_id));
 }
+
+jQuery(function ($) {
+    return $("#question_survey_section_id").on("change", function () {
+        var control_element = $(this).closest('form').find('#new_section');
+
+        if ($(this).val() === "") {
+            return $(control_element).show();
+        } else {
+            return $(control_element).hide();
+        }
+    });
+});

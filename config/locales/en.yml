@@ -6,5 +6,9 @@ en:
     attributes:
       question:
         text: "Label"
-        survey_section_id: "Section"
+        survey_section_id: "Survey"
+        survey_section_title: "Survey title"
         answers: ""
+
+      survey:
+        title: "Survey"

@@ -4,13 +4,13 @@
   = hidden_field_tag "question[pick]", 'one'
 
   .control-group
-    = f.label :survey_section_id, 'Section', :class => 'control-label'
+    = f.label :survey_section_id, 'Survey', :class => 'control-label'
     .controls
       - if SurveySection.any?
         = f.select :survey_section_id, SurveySection.all.collect{|s| [s.title, s.id]}, {:include_blank => true}
 
       #new_section{:style => "display:#{@question.survey_section_id.present? ? 'none' : 'block'};"}
-        = f.text_field :survey_section_title, :placeholder => "Enter new section title"
+        = f.text_field :survey_section_title, :placeholder => "Enter survey title"
 
   .control-group
     = f.label :text, 'Label', :class => 'control-label'

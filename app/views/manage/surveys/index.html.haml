@@ -8,6 +8,7 @@
       %tr
         %th Title
         %th Access Code
+        %th #Questions
         %th.date Updated At
         %th.date Created At
         %th
@@ -16,6 +17,7 @@
         %tr
           %td= link_to survey.title, manage_survey_path(survey)
           %td= link_to survey.access_code, manage_survey_path(survey)
+          %td 100
           %td= show_date(survey.updated_at)
           %td= show_date(survey.created_at)
           %td.actions

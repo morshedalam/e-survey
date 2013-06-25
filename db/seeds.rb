@@ -3,6 +3,3 @@
 #
 
 $: << "#{Rails.root}/db"
-
-# Sample Survey
-load 'seeds_survey.rb'

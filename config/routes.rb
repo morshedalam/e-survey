@@ -5,11 +5,8 @@ SurveyExample::Application.routes.draw do
       get :index
     end
 
-    resources :questions, :students
-
-    resources :teachers do
-      get :report, :on => :member
-    end
+    resources :surveys
+    resources :users
 
     root :to => 'home#index'
   end

@@ -1,0 +1,28 @@
+%h1 Survey Details
+
+%dl.dl-horizontal
+  %dt
+    %strong Title :
+  %dd= @survey.title
+
+  %dt
+    %strong Access Code :
+  %dd= @survey.access_code
+
+  %dt
+    %strong Description :
+  %dd= @survey.description
+
+  %dt
+    %strong Updated At :
+  %dd= show_date(@survey.created_at)
+
+  %dt
+    %strong Created At :
+  %dd= show_date(@survey.created_at)
+
+.form-actions
+  = link_to 'Back', manage_surveys_path, :class => 'btn'
+  = link_to 'Edit', edit_manage_survey_path(@survey), :class => 'btn'
+  = link_to 'Delete', manage_survey_path(@survey), :method => 'delete',
+  :class => 'btn btn-danger', :data => { :confirm => 'Are you sure, you want to delete the survey?' }

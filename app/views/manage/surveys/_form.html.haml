@@ -1,0 +1,16 @@
+= form_for(@survey, :url => submit_path, :html => {:method => submit_method}) do |f|
+  = render :partial => 'shared/form_error', :locals => {:obj => @survey}
+
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :placeholder => 'Enter title', :class => 'text_field'
+
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :style => "width: 500px;height:150px"
+
+  .form-actions
+    = f.submit 'Save', :class => 'btn btn-primary'
+    = link_to 'Cancel', manage_surveys_path, :class => 'btn'

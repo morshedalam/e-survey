@@ -1,0 +1,29 @@
+= link_to 'New', new_manage_survey_path, :class => 'btn btn-primary pull-right'
+
+%h1 Surveys
+
+- if @surveys.any?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Access Code
+        %th.date Updated At
+        %th.date Created At
+        %th
+    %tbody
+      - @surveys.each do |survey|
+        %tr
+          %td= link_to survey.title, manage_survey_path(survey)
+          %td= link_to survey.access_code, manage_survey_path(survey)
+          %td= show_date(survey.updated_at)
+          %td= show_date(survey.created_at)
+          %td.actions
+            = link_to 'Take', edit_manage_survey_path(survey), :class => 'btn btn-mini btn-primary'
+            = link_to 'Edit', edit_manage_survey_path(survey), :class => 'btn btn-mini'
+            = link_to 'Delete', manage_survey_path(survey),  :method => :delete,
+            :class => 'btn btn-mini btn-danger',
+            :data => { :confirm => 'Are you sure, you want to delete the survey?' }
+
+- else
+  .empty No Survey Information Found.

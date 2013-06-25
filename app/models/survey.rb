@@ -13,6 +13,11 @@ class Survey < ActiveRecord::Base
     return false
   end
 
+  def question_count
+    survey_section = self.sections.first
+    return survey_section.present? ? survey_section.questions.count : 0
+  end
+
   private
 
   def create_section

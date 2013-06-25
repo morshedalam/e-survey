@@ -15,9 +15,10 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '>= 2.3.0.0'
-gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
-gem 'acts_as_list', :git => 'git://github.com/swanandp/acts_as_list.git'
+gem 'surveyor'
+gem 'acts_as_list'
 gem 'haml-rails'
+gem 'bcrypt-ruby'
 
 group :development do
   gem 'rb-readline'

@@ -1,0 +1,4 @@
+%h4 Edit User
+
+= render :partial => 'form',
+         :locals => {:submit_path => manage_user_path(@user), :submit_method => :put}

@@ -1,0 +1,20 @@
+%h4 User Details
+
+%dl.dl-horizontal
+  %dt
+    %strong First Name :
+  %dd= @user.first_name
+
+  %dt
+    %strong Last Name :
+  %dd= @user.last_name
+
+  %dt
+    %strong Email :
+  %dd= @user.email
+
+.form-actions
+  = link_to 'Back', manage_users_path, :class => 'btn'
+  = link_to 'Edit', edit_manage_user_path(@user), :class => 'btn'
+  = link_to 'Delete', manage_user_path(@user), :method => 'delete',
+  :class => 'btn btn-danger', :data => { :confirm => 'Are you sure, you want to delete the user?' }

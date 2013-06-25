@@ -1,0 +1,20 @@
+= form_for(@user, :url => submit_path, :html => {:method => submit_method}) do |f|
+  = render :partial => 'shared/form_error', :locals => {:obj => @user}
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .form-actions
+    = f.submit 'Save', :class => 'btn btn-primary'
+    = link_to 'Cancel', manage_users_path, :class => 'btn'

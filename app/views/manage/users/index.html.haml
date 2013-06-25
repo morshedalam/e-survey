@@ -1,0 +1,23 @@
+= link_to 'New User', new_manage_user_path, :class => 'btn pull-right'
+%h4 Users
+- if @users.any?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th First name
+        %th Last name
+        %th Email
+        %th{:style => "width: 150px;"}
+    - @users.each do |user|
+      %tr
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.email
+        %td.actions
+          = link_to 'Edit', edit_manage_user_path(user), :class => 'btn btn-mini'
+          = link_to 'Delete', manage_user_path(user),  :method => :delete,
+          :class => 'btn btn-mini btn-danger',
+          :data => { :confirm => 'Are you sure, you want to delete the user?' }
+
+- else
+  .empty No user found

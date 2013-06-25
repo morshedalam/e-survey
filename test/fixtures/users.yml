@@ -3,11 +3,11 @@
 one:
   first_name: MyString
   last_name: MyString
-  department_name: MyString
-  joining_date: 2013-01-08
+  email: MyString
+  password_digest: MyString
 
 two:
   first_name: MyString
   last_name: MyString
-  department_name: MyString
-  joining_date: 2013-01-08
+  email: MyString
+  password_digest: MyString

@@ -4,14 +4,12 @@
   %table.table.table-striped
     %thead
       %tr
-        %th First name
-        %th Last name
+        %th Name
         %th Email
         %th{:style => "width: 150px;"}
     - @users.each do |user|
       %tr
-        %td= user.first_name
-        %td= user.last_name
+        %td= link_to user.name, manage_user_path(user)
         %td= user.email
         %td.actions
           = link_to 'Edit', edit_manage_user_path(user), :class => 'btn btn-mini'

@@ -33,7 +33,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webrat'
   gem 'factory_girl_rails', '1.0.1'
-  gem 'spork', '0.9.0.rc3'
+  #gem 'spork', '0.9.0.rc3'
 
   gem 'cucumber'
   gem 'cucumber-rails', :require => false

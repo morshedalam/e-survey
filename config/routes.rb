@@ -6,6 +6,7 @@ SurveyExample::Application.routes.draw do
     end
 
     resources :questions, :students
+
     resources :teachers do
       get :report, :on => :member
     end

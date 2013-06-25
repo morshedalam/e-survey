@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'sqlite3'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -12,11 +13,11 @@ group :assets do
   gem 'therubyracer'
 end
 
-gem 'haml'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '>= 2.3.0.0'
 gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
 gem 'acts_as_list', :git => 'git://github.com/swanandp/acts_as_list.git'
+gem 'haml-rails'
 
 group :development do
   gem 'rb-readline'

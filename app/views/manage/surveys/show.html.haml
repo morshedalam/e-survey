@@ -2,23 +2,23 @@
 
 %dl.dl-horizontal
   %dt
-    %strong Title :
+    Title :
   %dd= @survey.title
 
   %dt
-    %strong Access Code :
+    Access Code :
   %dd= @survey.access_code
 
   %dt
-    %strong Description :
+    Description :
   %dd= @survey.description
 
   %dt
-    %strong Updated At :
+    Updated At :
   %dd= show_date(@survey.created_at)
 
   %dt
-    %strong Created At :
+    Created At :
   %dd= show_date(@survey.created_at)
 
 .form-actions

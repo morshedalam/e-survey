@@ -50,14 +50,17 @@ textarea {
     height: 150px;
     width: 500px;
 }
-.actions{
+
+.actions {
     white-space: nowrap;
     width: 50px;
 }
-.controls .fields{
+
+.controls .fields {
     padding-bottom: 1px;;
 }
-.fields .field_with_errors{
+
+.fields .field_with_errors {
     display: inline;
 }
 

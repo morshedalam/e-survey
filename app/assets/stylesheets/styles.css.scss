@@ -7,20 +7,30 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
-.controls{
-  input[type="radio"]{
+.controls {
+  input[type="radio"] {
     display: inline;
     margin: 0px;
   }
-  label{
+  label {
     display: inline-block;
     margin-right: 10px;
     margin-top: 5px;
   }
 }
-.btn-icon{
+
+.btn-icon {
   cursor: pointer;
 }
-.btn-icon:hover{
+
+.btn-icon:hover {
   text-decoration: none;
+}
+
+.dl-horizontal dt {
+  font-weight: normal;
+  padding-bottom: 3px;
+}
+.dl-horizontal dd {
+  padding-bottom: 3px;
 }

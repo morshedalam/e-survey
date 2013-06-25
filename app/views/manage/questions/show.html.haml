@@ -3,15 +3,15 @@
 
 %dl.dl-horizontal
   %dt
-    %strong Label :
+    Label :
   %dd= @question.text
 
   %dt
-    %strong Section :
+    Section :
   %dd= @question.survey_section.title
 
   %dt
-    %strong Answers :
+    Answers :
   %dd
     - @question.answers.each do |answer|
       .field= answer.text

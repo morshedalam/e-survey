@@ -1,4 +1,4 @@
-Prosurvey::Application.routes.draw do
+ESurvey::Application.routes.draw do
   #ADMIN PANEL
   namespace :manage do
     controller :home do

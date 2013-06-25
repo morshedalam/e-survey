@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Prosurvey::Application.config.session_store :cookie_store, key: '_prosurvey_session'
+ESurvey::Application.config.session_store :cookie_store, key: '_esurvey_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Prosurvey::Application.config.session_store :active_record_store
+# ESurvey::Application.config.session_store :active_record_store

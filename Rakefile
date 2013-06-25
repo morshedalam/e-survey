@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Prosurvey::Application.load_tasks
+ESurvey::Application.load_tasks

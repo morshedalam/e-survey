@@ -7,7 +7,7 @@
   %body
     = render "shared/nav"
 
-    .container.content-container{ :'data-pjax-container' => true }
+    .container.content-container
       = render "shared/flash_messages"
       = yield
 

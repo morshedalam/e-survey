@@ -13,7 +13,6 @@ group :assets do
 end
 
 gem 'haml'
-gem 'pjax_rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '>= 2.3.0.0'
 gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'

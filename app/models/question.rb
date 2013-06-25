@@ -8,9 +8,7 @@ class Question < ActiveRecord::Base
   acts_as_list :order => :display_order, :column => :display_order
 
   before_validation :prepare_attributes
-
   validate :validate_section_and_answers
-
 
   def self.display_options
     return {
@@ -19,7 +17,6 @@ class Question < ActiveRecord::Base
         'inline' => 'Show Horizontally'
     }
   end
-
 
   private
 

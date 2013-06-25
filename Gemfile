@@ -19,6 +19,7 @@ gem 'surveyor'
 gem 'acts_as_list'
 gem 'haml-rails'
 gem 'bcrypt-ruby'
+gem 'faker', '1.0.1'
 
 group :development do
   gem 'rb-readline'
@@ -26,7 +27,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'annotate'
+  gem 'annotate', '>=2.5.0'
 end
 
 group :test do
@@ -35,7 +36,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webrat'
   gem 'factory_girl_rails', '1.0.1'
-  #gem 'spork', '0.9.0.rc3'
+  gem 'spork', '0.9.0.rc3'
 
   gem 'cucumber'
   gem 'cucumber-rails', :require => false

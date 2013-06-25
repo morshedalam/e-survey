@@ -11,11 +11,11 @@
 
   %dt
     Description :
-  %dd= @survey.description
+  %dd= @survey.description || ' - '
 
   %dt
     Updated At :
-  %dd= show_date(@survey.created_at)
+  %dd= show_date(@survey.updated_at)
 
   %dt
     Created At :

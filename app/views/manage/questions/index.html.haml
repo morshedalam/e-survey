@@ -1,14 +1,13 @@
 = link_to 'New', new_manage_question_path, :class => 'btn btn-primary pull-right pjax'
 
-.page-header
-  %h4 Questions
+%h4 Questions
 
 - if @questions.any?
   %table.table.table-striped
     %thead
       %tr
         %th Label
-        %th Section
+        %th Survey
         %th #Answers
         %th.date Date
         %th

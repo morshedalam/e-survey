@@ -17,6 +17,7 @@ SurveyExample::Application.routes.draw do
     get :privacy
     get :terms
     get :about
+    get :available_surveys
   end
 
   match 'survey_list', :to => 'surveyor#index', :as => 'survey_list', :via => :get

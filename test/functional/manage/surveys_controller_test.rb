@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SurveysControllerTest < ActionController::TestCase
+class Manage::SurveysControllerTest < ActionController::TestCase
   setup do
     @survey = surveys(:one)
   end
@@ -21,7 +21,7 @@ class SurveysControllerTest < ActionController::TestCase
       post :create, survey: {  }
     end
 
-    assert_redirected_to survey_path(assigns(:survey))
+    assert_redirected_to manage_survey_path(assigns(:survey))
   end
 
   test "should show survey" do
@@ -36,7 +36,7 @@ class SurveysControllerTest < ActionController::TestCase
 
   test "should update survey" do
     put :update, id: @survey, survey: {  }
-    assert_redirected_to survey_path(assigns(:survey))
+    assert_redirected_to manage_survey_path(assigns(:survey))
   end
 
   test "should destroy survey" do
@@ -44,6 +44,6 @@ class SurveysControllerTest < ActionController::TestCase
       delete :destroy, id: @survey
     end
 
-    assert_redirected_to surveys_path
+    assert_redirected_to manage_surveys_path
   end
 end

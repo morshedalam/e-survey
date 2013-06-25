@@ -9,29 +9,22 @@ module CustomSurveyMethods
     @response_sets = ResponseSet.all
   end
 
-  # Actions
   def new
-    #Survey and Question
-    @survey = Survey.random
-    redirect_to(new_manage_question_path(),
-                :notice => "You haven't any question to rate.") and return if !(@survey.present? && @survey.has_questions?)
+    @survey = Survey.new
 
-    #Teacher
-    @teacher = Teacher.random
-    redirect_to(new_manage_teacher_path(),
-                :notice => "Please add a teacher to rate") and return if @teacher.nil?
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @survey }
+    end
+  end
 
-    #Student
-    @student = Student.random
-    redirect_to(new_manage_student_path(),
-                :notice => "Please add a student to take survey") and return if @student.nil?
+  def create
+    @survey = Survey.new
 
-    #Creating new response set for survey
-    @response_set = ResponseSet.create(:survey => @survey, :teacher => @teacher, :user => @student)
-
-    #Redirect to survey page
-    redirect_to(edit_my_survey_path(:survey_code => @survey.access_code,
-                                    :response_set_code => @response_set.access_code))
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @survey }
+    end
   end
 
   def show

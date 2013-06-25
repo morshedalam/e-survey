@@ -9,42 +9,13 @@ module CustomSurveyMethods
     @response_sets = ResponseSet.all
   end
 
-  def new
-    @survey = Survey.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @survey }
-    end
-  end
-
-  def create
-    @survey = Survey.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @survey }
-    end
-  end
-
-  def show
-    super
-  end
-
-  def edit
-    super
-  end
-
-  def update
-    super
-  end
-
   private
 
   def surveyor_finish
     thank_you_path()
   end
 end
+
 class SurveyorController < ApplicationController
   include Surveyor::SurveyorControllerMethods
   include CustomSurveyMethods

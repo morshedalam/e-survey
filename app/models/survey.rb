@@ -1,6 +1,8 @@
 class Survey < ActiveRecord::Base
   include Surveyor::Models::SurveyMethods
 
+  after_save :create_section
+
   def has_questions?
     return false if self.sections.empty?
 
@@ -9,6 +11,14 @@ class Survey < ActiveRecord::Base
     end
 
     return false
+  end
+
+  private
+
+  def create_section
+    SurveySection.where(:title => self.title,
+                        :survey_id => self.id,
+                        :display_order => 1).first_or_create
   end
 end
 

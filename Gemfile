@@ -6,23 +6,22 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
-  gem 'uglifier'
 end
 
 gem 'haml'
 gem 'pjax_rails'
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
-gem 'less-rails'
-gem 'less-rails-bootstrap'
+gem 'bootstrap-sass', '>= 2.3.0.0'
 gem 'surveyor', :git => 'git://github.com/NUBIC/surveyor.git'
 gem 'acts_as_list', :git => 'git://github.com/swanandp/acts_as_list.git'
 
 group :development do
   gem 'rb-readline'
+  gem 'rename', :path => '/home/morshed/projects/code-bench/rename'
 end
 
 group :development, :test do

@@ -1,4 +1,4 @@
-Ter::Application.routes.draw do
+SurveyExample::Application.routes.draw do
   #ADMIN PANEL
   namespace :manage do
     controller :home do

@@ -2,10 +2,8 @@
 %html{:lang => "en"}
   %head
     = render "layouts/head"
-
-    -#= stylesheet_link_tag('surveyor/reset', 'surveyor/dateinput', 'surveyor/jquery-ui.custom',
-    -#'surveyor/jquery-ui-timepicker-addon', 'surveyor', 'custom') + javascript_include_tag('surveyor/jquery.tools.min', 'surveyor/jquery-ui', 'surveyor/jquery-ui-timepicker-addon', 'surveyor/jquery.surveyor', 'surveyor/jquery.blockUI')
-    = yield(:head)
+    = surveyor_includes
+    = yield(:javascript)
 
   %body
     = render "shared/nav"

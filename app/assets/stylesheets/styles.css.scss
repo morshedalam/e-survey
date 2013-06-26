@@ -1,6 +1,5 @@
 body {
   background-color: #ffffff;
-  padding-top: 60px;
 }
 
 a, a:visited, a:active {
@@ -34,4 +33,26 @@ a, a:visited, a:active {
 
 .dl-horizontal dd {
   padding-bottom: 3px;
+}
+
+#survey_list {
+  .survey {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    width: 330px;
+    line-height: 20px;
+    padding: 4px 0px 4px 5px;
+
+    .name {
+      display: inline-block;
+      width: 250px;
+    }
+    .label {
+      padding-right: 5px;
+    }
+    .btn-take {
+      background-color: #F89406;
+    }
+  }
 }

@@ -19,7 +19,9 @@ gem 'surveyor'
 gem 'acts_as_list'
 gem 'haml-rails'
 gem 'bcrypt-ruby'
+
 gem 'faker', '1.0.1'
+gem 'quiet_assets'
 
 group :development do
   gem 'rb-readline'

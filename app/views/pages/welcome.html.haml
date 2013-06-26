@@ -1,5 +1,11 @@
-%h2 Welcome to e-survey
-
-%h4
-  = link_to "Click here", "/instruction"
-  to see the instruction.
+.container
+  .hero-unit
+    %h2 Welcome to e-survey
+    %p
+      Please make sure to add
+      = link_to 'User', manage_users_path()
+      ,
+      = link_to 'Survey', manage_surveys_path()
+      and
+      = link_to 'Question', manage_questions_path()
+      to take a survey...

@@ -3,6 +3,11 @@ module SurveyorControllerCustomMethods
     base.send :layout, 'surveyor_custom'
   end
 
+  def new
+    @surveys_by_access_code = Survey.order("created_at DESC, survey_version DESC").all.group_by(&:access_code)
+    render :layout => 'application'
+  end
+
   def create
     #Check available User
     @user = User.random

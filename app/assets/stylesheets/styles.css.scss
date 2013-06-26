@@ -35,38 +35,37 @@ a, a:visited, a:active {
   padding-bottom: 3px;
 }
 
-#survey_list {
-  .survey {
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-    width: 330px;
-    line-height: 20px;
-    padding: 4px 0px 4px 5px;
+.survey {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  width: 320px;
+  line-height: 20px;
+  padding: 4px 0px 4px 5px;
 
-    .name {
-      display: inline-block;
-      width: 220px;
-    }
-    .label {
-      display: inline-block;
-      margin-right: 2px;
-      min-width: 30px;
-      font-size: 90%;
-      text-align: center;
-      line-height: 16px;
-    }
-    .result{
-      background-color: #5BB75B;
-      min-width: 45px;
-    }
-    .btn-take {
-      background-color: #F89406;
-      font-size: 100%;
-      width: auto;
-    }
+  .name {
+    display: inline-block;
+    width: 210px;
+  }
+  .label {
+    display: inline-block;
+    margin-right: 2px;
+    min-width: 30px;
+    font-size: 90%;
+    text-align: center;
+    line-height: 16px;
+  }
+  .result {
+    background-color: #5BB75B;
+    min-width: 45px;
+  }
+  .btn-take {
+    background-color: #F89406;
+    font-size: 100%;
+    width: auto;
   }
 }
-.table th, .table td{
+
+.table th, .table td {
   font-size: 12px;
 }

@@ -1,30 +1,28 @@
-#surveyor
-  #survey_list
-    .hero-unit
-      - if @surveys_by_access_code.empty?
-        %h4 No survey available
+.hero-unit
+  - if @surveys_by_access_code.empty?
+    %h3 No survey available
 
-        %p
-          Please make sure to add
-          = link_to 'User', manage_users_path()
-          ,
-          = link_to 'Survey', manage_surveys_path()
-          and
-          = link_to 'Question', manage_questions_path()
-          to take a survey...
+    %p
+      Please make sure to add
+      = link_to 'User', manage_users_path()
+      ,
+      = link_to 'Survey', manage_surveys_path()
+      and
+      = link_to 'Question', manage_questions_path()
+      to take a survey...
 
-      - else
-        %h4 Available Surveys
-        - @surveys_by_access_code.each do |access_code, surveys|
-          - survey = surveys.first
-          = form_tag surveyor.take_survey_path(:survey_code => access_code),
-          :class => 'survey label label-info' do
-            %span.name
-              = hidden_field_tag :surveyor_javascript_enabled, false
-              = hidden_field_tag :survey_version, ""
-              = truncate(survey.translation(I18n.locale)[:title], :length => 35)
-            %span.label= "Q : #{survey.question_count}"
-            %span.label.result= "R : #{survey.response_set_count}"
+  - else
+    %h3 Available Surveys
+    - @surveys_by_access_code.each do |access_code, surveys|
+      - survey = surveys.first
+      = form_tag surveyor.take_survey_path(:survey_code => access_code),
+      :class => 'survey label label-info' do
+        %span.name
+          = hidden_field_tag :surveyor_javascript_enabled, false
+          = hidden_field_tag :survey_version, ""
+          = truncate(survey.translation(I18n.locale)[:title], :length => 35)
+        %span.label= "Q : #{survey.question_count}"
+        %span.label.result= "R : #{survey.response_set_count}"
 
 :javascript
   $(document).ready(function() {

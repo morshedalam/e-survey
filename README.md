@@ -1,16 +1,18 @@
-== Survey Management System
+## Web based survey management system
 
-h3. Installation
-  git clone git@github.com:morshedalam/survey-system.git
+### Installation
+  <pre>
+  git clone git@github.com:morshedalam/e-survey.git
   bundle install
   bundle exec rake db:setup
-  rails s
+  rails s</pre>
 
-h3. Populate Sample Data
-  bundle exec rake db:populate
+### Populate Sample Data
+  <pre>
+  bundle exec rake db:populate</pre>
 
 
-h3. Contributing
+### Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

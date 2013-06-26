@@ -20,7 +20,7 @@ namespace :db do
   task surveys: :environment do
     15.times do |s|
       survey = Faker::Internet.domain_name
-      10.times do |q|
+      (5+rand(1..5)).times do |q|
         words = Faker::Lorem.words(3)
         Question.new(
             {

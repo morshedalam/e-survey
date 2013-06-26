@@ -16,6 +16,7 @@ ESurvey::Application.routes.draw do
     get :about
     get :instruction
     get :survey_results
+    get :db_populate
   end
 
   mount Surveyor::Engine => "/surveys", :as => "surveyor"

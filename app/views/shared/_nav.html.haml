@@ -5,6 +5,7 @@
 
       .container.nav-collapse
         %ul.nav.pull-right
+          %li= link_to 'Populate Fake Data', '/db_populate' if Survey.count < 35
           %li= link_to 'Take a Survey', '/surveys'
           %li.dropdown.pjax-links
             %a.dropdown-toggle{:href => "javascript:void(0);", "data-toggle" => "dropdown"}

@@ -26,7 +26,7 @@ namespace :db do
             {
                 "text" => Faker::Lorem.sentence,
                 "survey_section_title" => survey,
-                "display_type" => "default",
+                "display_type" => "inline",
                 "pick" => "one",
                 "answers_attributes" => {
                     "0" => {'text' => words.first, "_destroy" => "false"},

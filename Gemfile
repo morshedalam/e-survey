@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby 'ruby-1.9.3-p194'
+ruby 'ruby-1.9.3'
 
 gem 'rails', '3.2.6'
 

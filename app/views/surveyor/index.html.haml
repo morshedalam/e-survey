@@ -5,22 +5,22 @@
   %table.table.table-striped
     %thead
       %tr
-        %th Survey Title
+        %th Title
         %th User
-        %th.date Started At
-        %th.date Completed At
+        %th.center #Questions
+        %th.date Date
         %th.actions
 
     %tbody
-      - @response_sets.each do |response_se|
+      - @response_sets.each do |response_set|
         %tr
-          %td= link_to(response_se.survey.title, manage_survey_path(response_se.user))
-          %td= link_to(response_se.user.name, manage_user_path(response_se.user))
-          %td= show_date(response_se.started_at)
-          %td= show_date(response_se.updated_at)
+          %td= link_to(response_set.survey.title, manage_survey_path(response_set.user))
+          %td= link_to(response_set.user.name, manage_user_path(response_set.user))
+          %td.center= response_set.survey.question_count
+          %td= show_date(response_set.updated_at)
           %td.actions
-            - details = view_my_survey_path(:survey_code => response_se.survey.access_code,
-            :response_set_code => response_se.access_code)
+            - details = surveyor.view_my_survey_path(:survey_code => response_set.survey.access_code,
+            :response_set_code => response_set.access_code)
             = link_to('Show', details, :class => 'btn btn-mini')
 
 - else

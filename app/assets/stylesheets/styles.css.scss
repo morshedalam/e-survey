@@ -46,13 +46,20 @@ a, a:visited, a:active {
 
     .name {
       display: inline-block;
-      width: 250px;
+      width: 190px;
     }
     .label {
-      padding-right: 5px;
+      display: inline-block;
+      margin-right: 2px;
+      min-width: 30px;
+      font-size: 80%;
+      text-align: center;
+      line-height: 16px;
     }
     .btn-take {
       background-color: #F89406;
+      font-size: 100%;
+      width: auto;
     }
   }
 }

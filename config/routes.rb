@@ -17,10 +17,8 @@ ESurvey::Application.routes.draw do
     get :instruction
   end
 
-  match 'survey_list', :to => 'surveyor#index', :as => 'survey_list', :via => :get
-  match 'thank_you', :to => 'surveyor#thank_you', :as => 'thank_you', :via => :get
-
   mount Surveyor::Engine => "/surveys", :as => "surveyor"
+  match 'survey_results', :to => 'surveyor#index', :as => 'survey_results', :via => :get
 
   root :to => 'pages#welcome'
 end

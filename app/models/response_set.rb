@@ -1,5 +1,7 @@
 class ResponseSet < ActiveRecord::Base
   include Surveyor::Models::ResponseSetMethods
+
+  scope :completed, where("response_sets.completed_at is not null").order("response_sets.completed_at asc")
 end
 
 # == Schema Information
@@ -14,7 +16,6 @@ end
 #  completed_at :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  teacher_id   :integer
 #  api_id       :string(255)
 #
 

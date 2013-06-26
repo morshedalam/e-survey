@@ -3,6 +3,10 @@ module SurveyorControllerCustomMethods
     base.send :layout, 'surveyor_custom'
   end
 
+  def index
+    @response_sets = ResponseSet.completed
+  end
+
   def create
     #Check available User
     @user = User.random
@@ -21,16 +25,22 @@ module SurveyorControllerCustomMethods
     end
   end
 
+  def edit
+    # @response_set is set in before_filter - set_response_set_and_render_context
+    if @response_set
+      @survey = Survey.with_sections.find_by_id(@response_set.survey_id)
+      @sections = @survey.sections
+      @section = @sections.with_includes.find(section_id_from(params) || :first) || @sections.with_includes.first
+      set_dependents
+    else
+      flash[:notice] = t('surveyor.unable_to_find_your_responses')
+      redirect_to redirect_to surveyor.available_surveys_path()
+    end
+  end
+
   def export
     redirect_to manage_surveys_path()
   end
-
-  #
-  #private
-  #
-  #def surveyor_finishs
-  #  thank_you_path()
-  #end
 end
 
 class SurveyorController < ApplicationController

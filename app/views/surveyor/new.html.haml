@@ -16,12 +16,15 @@
       - else
         %h4 Available Surveys
         - @surveys_by_access_code.each do |access_code, surveys|
-          = form_tag surveyor.take_survey_path(:survey_code => access_code), :class => 'survey label label-info' do
+          - survey = surveys.first
+          = form_tag surveyor.take_survey_path(:survey_code => access_code),
+          :class => 'survey label label-info' do
             %span.name
               = hidden_field_tag :surveyor_javascript_enabled, false
               = hidden_field_tag :survey_version, ""
-              = truncate(surveys.first.translation(I18n.locale)[:title], :length => 40)
-            %span.label 100
+              = truncate(survey.translation(I18n.locale)[:title], :length => 35)
+            %span.label= "Q: #{survey.question_count}"
+            %span.label= "R: #{survey.response_set_count}"
             %span.label.btn-take Take
 
 :javascript

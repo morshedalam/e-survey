@@ -12,6 +12,10 @@ class Survey < ActiveRecord::Base
     return survey_section.present? ? survey_section.questions.count : 0
   end
 
+  def response_set_count
+    return self.response_sets.completed.count
+  end
+
   private
 
   def create_section

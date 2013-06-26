@@ -8,7 +8,8 @@
       %tr
         %th Title
         %th Access Code
-        %th #Questions
+        %th.center #Questions
+        %th.center #Results
         %th.date Updated At
         %th.date Created At
         %th
@@ -17,12 +18,13 @@
         %tr
           %td= link_to survey.title, manage_survey_path(survey)
           %td= link_to survey.access_code, manage_survey_path(survey)
-          %td= survey.question_count
+          %td.center= survey.question_count
+          %td.center= survey.response_set_count
           %td= show_date(survey.updated_at)
           %td= show_date(survey.created_at)
           %td.actions
-            = link_to 'Take', edit_manage_survey_path(survey), :class => 'btn btn-mini btn-primary'
             = link_to 'Edit', edit_manage_survey_path(survey), :class => 'btn btn-mini'
+            = link_to 'Take', edit_manage_survey_path(survey), :class => 'btn btn-mini btn-primary'
             = link_to 'Delete', manage_survey_path(survey),  :method => :delete,
             :class => 'btn btn-mini btn-danger',
             :data => { :confirm => 'Are you sure, you want to delete the survey?' }

@@ -14,6 +14,10 @@
  *= require bootstrap-responsive
  */
 
+.hero-unit {
+    padding: 40px;
+}
+
 .content-container {
     min-height: 400px;
 }
@@ -30,6 +34,10 @@
     font-size: 14px;
     line-height: 30px;
     margin: 0;
+}
+
+.center, .table td.center, .table th.center {
+    text-align: center;
 }
 
 .date {
@@ -64,11 +72,11 @@ textarea {
     display: inline;
 }
 
-#new_section{
+#new_section {
     margin-top: 5px;
 }
 
-#footer-line{
+#footer-line {
     margin-top: 30px;
 }
 

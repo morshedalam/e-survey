@@ -3,10 +3,6 @@ module SurveyorControllerCustomMethods
     base.send :layout, 'surveyor_custom'
   end
 
-  def index
-    @response_sets = ResponseSet.completed
-  end
-
   def create
     #Check available User
     @user = User.random

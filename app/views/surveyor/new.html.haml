@@ -23,9 +23,8 @@
               = hidden_field_tag :surveyor_javascript_enabled, false
               = hidden_field_tag :survey_version, ""
               = truncate(survey.translation(I18n.locale)[:title], :length => 35)
-            %span.label= "Q: #{survey.question_count}"
-            %span.label= "R: #{survey.response_set_count}"
-            %span.label.btn-take Take
+            %span.label= "Q : #{survey.question_count}"
+            %span.label.result= "R : #{survey.response_set_count}"
 
 :javascript
   $(document).ready(function() {

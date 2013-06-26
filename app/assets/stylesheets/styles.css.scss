@@ -46,15 +46,19 @@ a, a:visited, a:active {
 
     .name {
       display: inline-block;
-      width: 190px;
+      width: 220px;
     }
     .label {
       display: inline-block;
       margin-right: 2px;
       min-width: 30px;
-      font-size: 80%;
+      font-size: 90%;
       text-align: center;
       line-height: 16px;
+    }
+    .result{
+      background-color: #5BB75B;
+      min-width: 45px;
     }
     .btn-take {
       background-color: #F89406;
@@ -62,4 +66,7 @@ a, a:visited, a:active {
       width: auto;
     }
   }
+}
+.table th, .table td{
+  font-size: 12px;
 }

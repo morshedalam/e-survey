@@ -1,10 +1,5 @@
 class ResponseSet < ActiveRecord::Base
   include Surveyor::Models::ResponseSetMethods
-
-  attr_accessible :teacher, :user
-
-  belongs_to :teacher
-  belongs_to :user, :class_name => 'Student', :foreign_key => 'user_id'
 end
 
 # == Schema Information

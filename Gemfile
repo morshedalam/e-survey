@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'sqlite3'
-gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +27,13 @@ group :development do
 end
 
 group :development, :test do
+  gem 'mysql2'
   gem 'annotate', '>=2.5.0'
+end
+
+# Gems for production
+group :production do
+  gem 'pg'
 end
 
 group :test do

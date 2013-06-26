@@ -102,6 +102,7 @@ GEM
     mysql2 (0.3.11)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    pg (0.14.1)
     pickle (0.4.11)
       cucumber (>= 0.8)
       rake
@@ -165,7 +166,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.7)
     surveyor (1.4.0)
       fastercsv (~> 1.5.4)
       formtastic (~> 2.1.0)
@@ -212,6 +212,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   mysql2
+  pg
   pickle (~> 0.4.4)
   quiet_assets
   rails (= 3.2.6)
@@ -221,7 +222,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   spork (= 0.9.0.rc3)
-  sqlite3
   surveyor
   therubyracer
   uglifier (>= 1.0.3)

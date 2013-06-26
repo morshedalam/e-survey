@@ -15,4 +15,20 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
+
+  def surveyor_assets
+    stylesheet_link_tag('surveyor/reset',
+                        'surveyor/jquery-ui-1.10.0.custom',
+                        'surveyor/jquery-ui-timepicker-addon',
+                        'surveyor/ui.slider.extras',
+                        'surveyor/results',
+                        'surveyor',
+                        'custom') +
+        javascript_include_tag('surveyor/jquery-1.9.0',
+                               'surveyor/jquery-ui-1.10.0.custom',
+                               'surveyor/jquery-ui-timepicker-addon',
+                               'surveyor/jquery.selectToUISlider',
+                               'surveyor/jquery.surveyor',
+                               'surveyor/jquery.maskedinput')
+  end
 end

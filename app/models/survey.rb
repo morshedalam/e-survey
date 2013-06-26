@@ -4,13 +4,7 @@ class Survey < ActiveRecord::Base
   after_save :create_section
 
   def has_questions?
-    return false if self.sections.empty?
-
-    self.sections.each do |section|
-      return true if section.questions.any?
-    end
-
-    return false
+    return (self.question_count > 0)
   end
 
   def question_count
